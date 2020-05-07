@@ -9,6 +9,7 @@ namespace hocon {
     public:
         // Include context is part of a parseable, so it can always expect a valid parseable reference.
         simple_include_context(parseable const& parseable);
+        virtual ~simple_include_context() = default;
 
         // Unused method
         // shared_include_context with_parseable(weak_parseable new_parseable) const;
