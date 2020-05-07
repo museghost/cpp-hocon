@@ -91,6 +91,7 @@ namespace hocon {
     class relative_name_source : public name_source {
     public:
         relative_name_source(shared_include_context context);
+        virtual ~relative_name_source() = default;
 
         shared_parseable name_to_parseable(std::string name,
                                            config_parse_options parse_options) const override;
