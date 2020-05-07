@@ -17,6 +17,7 @@ namespace hocon {
     class config_null : public config_value {
     public:
         config_null(shared_origin origin);
+        virtual ~config_null() = default;
 
         config_value::type value_type() const override;
         std::string transform_to_string() const override;
