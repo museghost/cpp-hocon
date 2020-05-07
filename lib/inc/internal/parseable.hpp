@@ -48,6 +48,7 @@ namespace hocon {
         parseable() = default;
         parseable(parseable const&) = delete;
         parseable& operator=(parseable const&) = delete;
+        virtual ~parseable() = default;
 
     private:
         std::shared_ptr<config_document> parse_document(config_parse_options const& base_options) const;
@@ -79,6 +80,7 @@ namespace hocon {
     class parseable_file : public parseable {
     public:
         parseable_file(std::string input_file_path, config_parse_options options);
+        virtual ~parseable_file() = default;
         std::unique_ptr<std::istream> reader() const override;
         shared_origin create_origin() const override;
         config_syntax guess_syntax() const override;
@@ -90,6 +92,7 @@ namespace hocon {
     class parseable_string : public parseable {
     public:
         parseable_string(std::string s, config_parse_options options);
+        virtual ~parseable_string() = default;
         std::unique_ptr<std::istream> reader() const override;
         shared_origin create_origin() const override;
 
@@ -120,6 +123,7 @@ namespace hocon {
     class parseable_not_found : public parseable {
     public:
         parseable_not_found(std::string what, std::string message, config_parse_options options);
+        virtual ~parseable_not_found() = default;
 
         std::unique_ptr<std::istream> reader() const override;
         shared_origin create_origin() const override;
