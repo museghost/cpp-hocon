@@ -9,6 +9,7 @@ namespace hocon {
     public:
         value(shared_value value);
         value(shared_value value, std::string original_text);
+        virtual ~value() = default;
 
         std::string to_string() const override;
         shared_origin const& origin() const override;
@@ -24,6 +25,7 @@ namespace hocon {
     class line : public token {
     public:
         line(shared_origin origin);
+        virtual ~line() = default;
 
         std::string to_string() const override;
 
@@ -33,6 +35,7 @@ namespace hocon {
     class unquoted_text : public token {
     public:
         unquoted_text(shared_origin origin, std::string text);
+        virtual ~unquoted_text() = default;
 
         std::string to_string() const override;
 
@@ -42,6 +45,7 @@ namespace hocon {
     class ignored_whitespace : public token {
     public:
         ignored_whitespace(shared_origin origin, std::string whitespace);
+        virtual ~ignored_whitespace() = default;
 
         std::string to_string() const override;
 
@@ -51,6 +55,7 @@ namespace hocon {
     class problem : public token {
     public:
         problem(shared_origin origin, std::string what, std::string message, bool suggest_quotes);
+        virtual ~problem() = default;
 
         std::string what() const;
         std::string message() const;
@@ -69,6 +74,7 @@ namespace hocon {
     class comment : public token {
     public:
         comment(shared_origin origin, std::string text);
+        virtual ~comment() = default;
 
         std::string text() const;
 
@@ -82,6 +88,7 @@ namespace hocon {
     class double_slash_comment : public comment {
     public:
         double_slash_comment(shared_origin origin, std::string text);
+        virtual ~double_slash_comment() = default;
 
         std::string token_text() const override;
     };
@@ -89,6 +96,7 @@ namespace hocon {
     class hash_comment : public comment {
     public:
         hash_comment(shared_origin origin, std::string text);
+        virtual ~hash_comment() = default;
 
         std::string token_text() const override;
     };
@@ -96,6 +104,7 @@ namespace hocon {
     class substitution : public token {
     public:
         substitution(shared_origin origin, bool optional, token_list expression);
+        virtual ~substitution() = default;
 
         bool optional() const;
         token_list const& expression() const;
