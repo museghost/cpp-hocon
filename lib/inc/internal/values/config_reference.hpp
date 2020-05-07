@@ -10,6 +10,7 @@ namespace hocon {
     class config_reference : public config_value, public unmergeable {
     public:
         config_reference(shared_origin origin, std::shared_ptr<substitution_expression> expr, int prefix_length = 0);
+        virtual ~config_reference() = default;
 
         /**
         * The type of the value; matches the JSON type schema.
