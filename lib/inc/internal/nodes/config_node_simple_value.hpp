@@ -8,6 +8,7 @@ namespace hocon {
     class config_node_simple_value : public abstract_config_node_value {
     public:
         config_node_simple_value(shared_token value);
+        virtual ~config_node_simple_value() = default;
 
         shared_token get_token() const;
         shared_value get_value() const;
