@@ -13,6 +13,7 @@ namespace hocon {
     class config_node_object : public config_node_complex_value {
     public:
         config_node_object(shared_node_list children);
+        virtual ~config_node_object() = default;
 
         std::shared_ptr<const config_node_complex_value> new_node(
                 shared_node_list nodes) const override;
