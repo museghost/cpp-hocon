@@ -36,6 +36,9 @@ namespace hocon {
         // container interface
         shared_value replace_child(shared_value const& child, shared_value replacement) const override;
         bool has_descendant(shared_value const& descendant) const override;
+        
+        // virtual dtor
+        virtual ~config_delayed_merge_object() = default;
 
 
     protected:
