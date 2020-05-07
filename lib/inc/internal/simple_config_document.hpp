@@ -11,6 +11,7 @@ namespace hocon {
     public:
         simple_config_document(std::shared_ptr<const config_node_root> root,
                                config_parse_options opts);
+        virtual ~simple_config_document() = default;
 
         std::unique_ptr<config_document> with_value_text(std::string path, std::string new_value) const override;
         std::unique_ptr<config_document> with_value(std::string path,
