@@ -11,6 +11,7 @@ namespace hocon {
     public:
         config_number(shared_origin origin,
                       std::string original_text);
+        virtual ~config_number() = default;
 
         std::string transform_to_string() const override;
         config_value::type value_type() const override;
