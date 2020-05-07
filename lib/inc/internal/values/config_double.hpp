@@ -10,6 +10,7 @@ namespace hocon {
     class config_double : public config_number {
     public:
         config_double(shared_origin origin, double value, std::string original_text);
+        virtual ~config_double() = default;
 
         std::string transform_to_string() const override;
 
