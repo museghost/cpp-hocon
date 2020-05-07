@@ -85,6 +85,8 @@ namespace hocon {
          * @return the modified original text
          */
         virtual std::string render() const = 0;
+        
+        virtual ~config_document() = default;
     };
 
     /**
