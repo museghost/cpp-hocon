@@ -13,6 +13,7 @@ namespace hocon {
     class config_node_field : public abstract_config_node_value {
     public:
         config_node_field(shared_node_list children);
+        virtual ~config_node_field() = default;
 
         token_list get_tokens() const override;
 
