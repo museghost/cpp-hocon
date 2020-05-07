@@ -7,6 +7,7 @@ namespace hocon {
     class config_int : public config_number {
     public:
         config_int(shared_origin origin, int value, std::string original_text);
+        virtual ~config_int() = default;
 
         std::string transform_to_string() const override;
 
