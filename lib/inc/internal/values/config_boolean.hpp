@@ -7,6 +7,7 @@ namespace hocon {
     class config_boolean : public config_value {
     public:
         config_boolean(shared_origin origin, bool value);
+        virtual ~config_boolean() = default;
 
         config_value::type value_type() const override;
         std::string transform_to_string() const override;
