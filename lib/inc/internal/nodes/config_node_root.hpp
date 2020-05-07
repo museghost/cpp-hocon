@@ -8,6 +8,7 @@ namespace hocon {
     class config_node_root : public config_node_complex_value {
     public:
         config_node_root(shared_node_list children, shared_origin origin);
+        virtual ~config_node_root() = default;
 
         std::shared_ptr<const config_node_complex_value> new_node(shared_node_list nodes) const override;
 
