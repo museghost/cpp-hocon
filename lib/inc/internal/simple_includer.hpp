@@ -12,6 +12,7 @@ namespace hocon {
     class simple_includer : public config_includer, public config_includer_file, public std::enable_shared_from_this<simple_includer> {
     public:
         simple_includer(shared_includer fallback);
+        virtual ~simple_includer() = default;
 
         shared_includer with_fallback(shared_includer fallback) const override;
 
@@ -100,6 +101,8 @@ namespace hocon {
         file_name_source();
 
         file_name_source(shared_include_context context);
+        
+        virtual ~file_name_source() = default;
 
         shared_parseable name_to_parseable(std::string name,
                                            config_parse_options parse_options) const override;
