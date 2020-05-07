@@ -11,6 +11,7 @@ namespace hocon {
     public:
         config_node_include(shared_node_list children,
                             config_include_kind kind);
+        virtual ~config_node_include() = default;
 
         token_list get_tokens() const override;
 
