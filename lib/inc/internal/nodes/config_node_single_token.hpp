@@ -8,6 +8,7 @@ namespace hocon {
     class config_node_single_token : public abstract_config_node {
     public:
         config_node_single_token(shared_token t);
+        virtual ~config_node_single_token() = default;
 
         token_list get_tokens() const override;
 
