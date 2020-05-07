@@ -11,6 +11,7 @@ namespace hocon {
     class config_delayed_merge : public config_value, public unmergeable, public replaceable_merge_stack {
     public:
         config_delayed_merge(shared_origin origin, std::vector<shared_value> stack);
+        virtual ~config_delayed_merge() = default;
 
         config_value::type value_type() const override;
 
