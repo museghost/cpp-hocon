@@ -24,6 +24,7 @@ namespace hocon {
     class config_concatenation : public config_value, public unmergeable, public container {
     public:
         config_concatenation(shared_origin origin, std::vector<shared_value> pieces);
+        virtual ~config_concatenation() = default;
 
         config_value::type value_type() const override;
         std::vector<shared_value> unmerged_values() const override;
