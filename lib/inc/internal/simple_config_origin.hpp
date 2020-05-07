@@ -18,6 +18,8 @@ namespace hocon {
         /** This constructor replaces the new_simple method in the original library. */
         simple_config_origin(std::string description, int line_number = -1, int end_line_number = -1,
                              origin_type org_type = origin_type::GENERIC);
+        
+        virtual ~simple_config_origin() = default;
 
         int line_number() const override;
 
