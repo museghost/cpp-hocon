@@ -9,6 +9,7 @@ namespace hocon {
     class config_node_path : public abstract_config_node {
     public:
         config_node_path(path node_path, token_list tokens);
+        virtual ~config_node_path() = default;
 
         token_list get_tokens() const override;
         path get_path() const;
