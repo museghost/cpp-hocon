@@ -41,6 +41,7 @@ namespace hocon {
         class proxy : public full_includer, public std::enable_shared_from_this<proxy> {
         public:
             proxy(std::shared_ptr<const config_includer> delegate);
+            virtual ~proxy() = default;
 
             shared_includer with_fallback(shared_includer fallback) const;
 
