@@ -14,6 +14,8 @@ namespace hocon {
                              resolve_status status, bool ignores_fallbacks);
 
         simple_config_object(shared_origin origin, std::unordered_map<std::string, shared_value> value);
+        
+        virtual ~simple_config_object() = default;
 
         shared_value attempt_peek_with_partial_resolve(std::string const& key) const override;
 
