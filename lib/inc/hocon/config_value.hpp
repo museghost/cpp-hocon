@@ -213,6 +213,7 @@ namespace hocon {
 
         class modifier {
          public:
+            virtual ~modifier() = default;
             virtual shared_value modify_child_may_throw(std::string const& key_or_null, shared_value v) = 0;
         };
 
