@@ -93,6 +93,8 @@ namespace hocon {
          * @return the config_origin with the given comments
          */
         LIBCPP_HOCON_EXPORT virtual shared_origin with_comments(std::vector<std::string> comments) const = 0;
+        
+        virtual ~config_origin() = default;
     };
 
 }  // namespace hocon
