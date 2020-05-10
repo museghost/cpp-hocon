@@ -25,6 +25,7 @@ namespace hocon {
         virtual std::shared_ptr<const config> to_config() const;
 
         config_object(shared_origin origin);
+        virtual ~config_object() = default;
 
         config_value::type value_type() const override;
 
