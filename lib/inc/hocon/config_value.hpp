@@ -49,6 +49,8 @@ namespace hocon {
         friend class config_delayed_merge;
         friend class config_delayed_merge_object;
     public:
+        virtual ~config_value() = default;
+        
         /**
          * The type of a configuration value (following the <a
          * href="http://json.org">JSON</a> type schema).
