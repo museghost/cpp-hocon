@@ -37,6 +37,7 @@ namespace hocon {
     class LIBCPP_HOCON_EXPORT config_list : public config_value {
     public:
         config_list(shared_origin origin) : config_value(move(origin)) {}
+        virtual ~config_list() = default;
 
         // list interface
         using iterator = std::vector<shared_value>::const_iterator;
