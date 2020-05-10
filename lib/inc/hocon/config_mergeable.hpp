@@ -60,6 +60,8 @@ namespace hocon {
          *         used)
          */
         virtual std::shared_ptr<const config_mergeable> with_fallback(std::shared_ptr<const config_mergeable> other) const = 0;
+        
+        virtual ~config_mergeable() = default;
 
     protected:
         /**
